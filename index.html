@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Crawl task</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  </head>
+
+  <body>
+    <header class="container">
+      <h1 class="mainHeader text-primary">WEB CRAWLER</h1>
+      <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="index.html">Home</a>
+          </li>
+        </ul>  
+      </nav>
+    </header>
+    
+    <div class="container formBody">
+    <form action="crawl.php" method="GET">
+      <div class="form-group">
+        <label for="text">URL</label>
+        <input type="text" class="form-control" name="crawl_url" id="crawl_url">
+      </div>
+      <div class="form-group">
+        <label for="text">Crawl Limit</label>
+        <input type="number" class="form-control" name="crawl_limit">
+      </div>
+      <div class="alert alert-warning" role="alert">
+        <strong>Warning!</strong> Limit greater than 3 can be resource intensive for server.
+      </div>      
+      <input type="submit" onclick="isUrl()" class="btn btn-primary" value="Crawl">
+    </form>
+    </div>
+
+    <script type="text/javascript" src="./js/script.js" ></script>
+
+  </body>
+</html>
