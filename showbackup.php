@@ -7,8 +7,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="script/script.js"></script>    
   </head>
 
   <body>
@@ -19,26 +17,21 @@
           <li class="nav-item">
             <a class="nav-link text-light" href="index.html">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="showbackup.php">Show History</a>
+          </li>
         </ul>  
       </nav>
     </header>
     
     <div class="container formBody">
-    <form action="crawlweb.php" method="get" onsubmit="return validate()">
-      <div class="form-group">
-        <label for="text">URL</label>
-        <input type="text" class="form-control" name="crawl_url" id="crawl_url" required>
-      </div>
-      <div class="form-group">
-        <label for="text">Crawl Limit</label>
-        <input type="number" class="form-control" name="crawl_limit" id="crawl_limit" required>
-      </div>
-      <div class="alert alert-warning" role="alert">
-        <strong>Warning!</strong> Limit greater than 3 can be resource intensive for server.
-      </div>      
-      <input type="submit" class="btn btn-primary" value="Crawl">
-    </form>
+        <?php
+            require_once("backupfilelist.php");
+            getFileList();
+        ?>
     </div>
+
+    <script type="text/javascript" src="./js/script.js" ></script>
 
   </body>
 </html>

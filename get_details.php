@@ -24,5 +24,5 @@ function get_details($url) {
 			$keywords = $meta->getAttribute("content");
 	}
 	// Return our JSON string containing the title, description, keywords and URL.
-	return '{ "Title": "'.str_replace("\n", "", $title).'", "Description": "'.str_replace("\n", "", $description).'", "Keywords": "'.str_replace("\n", "", $keywords).'", "URL": "'.$url.'"},';
+	return '{ "Title": "'.str_replace("\n", "", $title).'", "Description": "'.str_replace("\n", "", $description).'", "Keywords": "'.str_replace("\n", "", $keywords).'", "URL": "'.$url.'","Sublink":"",},';
 }

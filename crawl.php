@@ -6,8 +6,7 @@ error_reporting(E_ERROR | E_PARSE);
 $url=$_GET['crawl_url'];
 $depth=$_GET['crawl_limit'];
 
-/*$visited_links=array();
-
+/*
 if (!filter_var($url, FILTER_VALIDATE_URL)) {
 	die("Invalid URL");
 }*/
@@ -24,12 +23,6 @@ function crawl($url,$depth) {
 	$doc = new DOMDocument();
 	$doc->loadHTML($html);
 	foreach($doc->getElementsByTagName('a') as $link) {
-	/*	if (in_array($url,$GLOBALS['visited_links'])){
-			continue;
-		}
-	*/	
-		//echo "------$url-> ";
-		//echo $link->getAttribute('href')."<br>";
 		array_push($GLOBALS['jsonArray'],get_details($link->getAttribute('href')));
 		//print get_details($link->getAttribute('href'))."<br>";
 		print $GLOBALS['jsonArray'];
@@ -38,5 +31,6 @@ function crawl($url,$depth) {
 	}
 }
 
-crawl($url,$depth);
+//crawl($url,$depth);
+
 ?>
